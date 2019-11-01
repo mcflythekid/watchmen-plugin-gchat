@@ -1,0 +1,28 @@
+{
+  "name": "watchmen-plugin-gchat",
+  "version": "0.0.1",
+  "description": "Watchmen plugin for Google Chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcflythekid/watchmen-plugin-gchat.git"
+  },
+  "keywords": [
+    "watchmen",
+    "gchat",
+    "chat",
+    "google"
+  ],
+  "author": "McFly the Kid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcflythekid/watchmen-plugin-gchat/issues"
+  },
+  "homepage": "https://github.com/mcflythekid/watchmen-plugin-gchat#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
