@@ -76,6 +76,7 @@ var eventHandlers = {
    */
 
   onServiceOk: function (service, data) {
+    return;
     var serviceOkMsg = service.name + ' responded ' + 'OK!';
     var responseTimeMsg = data.elapsedTime + ' ms.';
     gchat.send(serviceOkMsg, responseTimeMsg);

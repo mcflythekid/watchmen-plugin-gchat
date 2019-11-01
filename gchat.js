@@ -1,9 +1,9 @@
 const axios = require('axios');
 const uniqid = require('uniqid');
 
-const WEBHOOK = process.env.WATCHMEN_GCHAT_WEBHOOK;
-const THREAD_KEY = 'watchmen';
-const API = `${WEBHOOK}&threadKey=${THREAD_KEY}`;
+var WEBHOOK = process.env.WATCHMEN_GCHAT_WEBHOOK;
+var THREAD_KEY = 'watchmen';
+var API = `${WEBHOOK}&threadKey=${THREAD_KEY}`;
 
 const send = text=>{
 	const uuid = uniqid();
@@ -11,7 +11,7 @@ const send = text=>{
 	axios.post(API, { text }).then(({ data })=>{
   	    console.log(`response-success:${uuid}`, data);
 	}).catch(error=>{
-	    console.error(`response-error:${uuid}`, data);
+	    console.error(`response-error:${uuid}`, error);
 	});
 };
 
