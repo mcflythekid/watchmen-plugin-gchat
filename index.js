@@ -51,6 +51,7 @@ var eventHandlers = {
    */
 
   onLatencyWarning: function (service, data) {
+    return;
     var msg = service.name + ' latency warning' + '. Took: ' + (data.elapsedTime + ' ms.');
     gchat.send(msg);
   },
@@ -63,7 +64,7 @@ var eventHandlers = {
    * @param {number} lastOutage.timestamp (ms)
    */
 
-  onServiceBack: function (service, lastOutage) {
+  onServiceBack: function (service, lastOutage) {	  
     var duration = moment.duration(+new Date() - lastOutage.timestamp);
     gchat.send(service.name + ' is back' + '. Down for ' + duration.humanize());
   },

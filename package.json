@@ -1,6 +1,6 @@
 {
   "name": "watchmen-plugin-gchat",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Watchmen plugin for Google Chat",
   "main": "index.js",
   "scripts": {
