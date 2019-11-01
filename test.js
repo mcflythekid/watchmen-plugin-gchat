@@ -1,3 +1,3 @@
-const gchat = require('./gchat.js');
+const gchat = require('./gchat');
 
-gchat.send('text');
+gchat.send('text 01');

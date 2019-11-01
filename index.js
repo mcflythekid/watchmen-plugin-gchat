@@ -13,7 +13,7 @@ var eventHandlers = {
    */
 
   onNewOutage: function (service, outage) {
-    var errorMsg = service.name + ' down!'.red + '. Error: ' + JSON.stringify(outage.error).red;
+    var errorMsg = service.name + ' down!' + '. Error: ' + JSON.stringify(outage.error);
     gchat.send(errorMsg);
   },
 
@@ -26,7 +26,7 @@ var eventHandlers = {
    */
 
   onCurrentOutage: function (service, outage) {
-    var errorMsg = service.name + ' is still down!'.red + '. Error: ' + JSON.stringify(outage.error).red;
+    var errorMsg = service.name + ' is still down!' + '. Error: ' + JSON.stringify(outage.error);
     gchat.send(errorMsg);
   },
 
@@ -39,7 +39,7 @@ var eventHandlers = {
    */
 
   onFailedCheck: function (service, data) {
-    var errorMsg = service.name + ' check failed!'.red + '. Error: ' + JSON.stringify(data.error).red;
+    var errorMsg = service.name + ' check failed!' + '. Error: ' + JSON.stringify(data.error);
     gchat.send(errorMsg);
   },
 
@@ -51,7 +51,7 @@ var eventHandlers = {
    */
 
   onLatencyWarning: function (service, data) {
-    var msg = service.name + ' latency warning'.yellow + '. Took: ' + (data.elapsedTime + ' ms.').yellow;
+    var msg = service.name + ' latency warning' + '. Took: ' + (data.elapsedTime + ' ms.');
     gchat.send(msg);
   },
 
@@ -65,7 +65,7 @@ var eventHandlers = {
 
   onServiceBack: function (service, lastOutage) {
     var duration = moment.duration(+new Date() - lastOutage.timestamp);
-    gchat.send(service.name.white + ' is back'.green + '. Down for '.gray + duration.humanize().white);
+    gchat.send(service.name + ' is back' + '. Down for ' + duration.humanize());
   },
 
   /**
@@ -76,9 +76,9 @@ var eventHandlers = {
    */
 
   onServiceOk: function (service, data) {
-    var serviceOkMsg = service.name + ' responded ' + 'OK!'.green;
+    var serviceOkMsg = service.name + ' responded ' + 'OK!';
     var responseTimeMsg = data.elapsedTime + ' ms.';
-    gchat.send(serviceOkMsg, responseTimeMsg.gray);
+    gchat.send(serviceOkMsg, responseTimeMsg);
   }
 };
 

@@ -1,13 +1,17 @@
 const axios = require('axios');
+const uniqid = require('uniqid');
 
-const THREAD_KEY = 'gchatnotixxx';
-const WEBHOOK = 'https://chat.googleapis.com/v1/spaces/AAAAy3Iea1k/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=ltV77nubTqiwfssZWRwlOH6j2zisgXofkcm0vvrxwsA%3D';
-
+const WEBHOOK = process.env.WATCHMEN_GCHAT_WEBHOOK;
+const THREAD_KEY = 'watchmen';
 const API = `${WEBHOOK}&threadKey=${THREAD_KEY}`;
 
 const send = text=>{
+	const uuid = uniqid();
+	console.log(`request:${uuid}`, text);
 	axios.post(API, { text }).then(({ data })=>{
-  	    console.log(data);
+  	    console.log(`response-success:${uuid}`, data);
+	}).catch(error=>{
+	    console.error(`response-error:${uuid}`, data);
 	});
 };
 
