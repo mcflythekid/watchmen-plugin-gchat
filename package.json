@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/mcflythekid/watchmen-plugin-gchat#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "uniqid": "^5.0.3"
   }
 }
